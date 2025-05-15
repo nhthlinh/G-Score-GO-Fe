@@ -21,7 +21,6 @@ const subjectNames: Record<string, string> = {
 const ReportPage = () => {
   const [data, setData] = useState<Report | null>(null);
   const [selectedSubject, setSelectedSubject] = useState<string>("toan");
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -34,10 +33,8 @@ const ReportPage = () => {
         }
         const result = await res.json();
         setData(result);
-        setError(null);
       } catch (err) {
         setData(null);
-        setError((err as Error).message);
       }
     };
     fetchData();
