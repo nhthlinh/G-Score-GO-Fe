@@ -1,54 +1,57 @@
-# React + TypeScript + Vite
+# G-Score Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Đây là frontend của dự án G-Score, sử dụng Vite + Vue/React (hoặc công nghệ tương ứng của bạn).
 
-Currently, two official plugins are available:
+## Yêu cầu hệ thống
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Node.js >= 16
+- npm >= 8
 
-## Expanding the ESLint configuration
+## Cài đặt và chạy frontend
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. **Cài đặt thư viện:**
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+   npm install
+````
+
+2. **Chạy project ở chế độ phát triển:**
+
+   ```bash
+   npm run dev
+   ```
+
+3. **Mở trình duyệt tại địa chỉ:**
+
+   ```
+   http://localhost:5173
+   ```
+
+## Build sản phẩm (nếu cần)
+
+```bash
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+File build sẽ nằm trong thư mục `dist/`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+## Cấu trúc thư mục (ví dụ)
+
+```
+├── public/             # Tài nguyên tĩnh
+├── src/                # Source code chính
+│   ├── components/     # Các component UI
+│   ├── pages/          # Các trang
+│   ├── App.vue / App.jsx
+│   └── main.js / main.tsx
+├── package.json
+└── vite.config.js
+```
+
+## DEMO 
+
+```bash
+https://g-score-go-fe.vercel.app
 ```
