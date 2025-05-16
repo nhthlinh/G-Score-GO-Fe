@@ -26,7 +26,7 @@ const SearchPage = () => {
     setData(null);
 
     try {
-      const res = await fetch(`http://localhost:8080/golden-owl-test/public/score/${trimmedSbd}`);
+      const res = await fetch(`https://g-score-go-production.up.railway.app/score/${trimmedSbd}`);
       if (!res.ok) {
         throw new Error('Không tìm thấy học sinh có SBD này');
       }

@@ -27,7 +27,7 @@ const ReportPage = () => {
       if (!selectedSubject.trim()) return;
 
       try {
-        const res = await fetch(`http://localhost:8080/golden-owl-test/public/report/${selectedSubject}`);
+        const res = await fetch(`https://g-score-go-production.up.railway.app/report/${selectedSubject}`);
         if (!res.ok) {
           throw new Error('Không tìm thấy môn học');
         }

@@ -7,7 +7,7 @@ const TopStudentPage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch("http://localhost:8080/golden-owl-test/public/top-students");
+      const res = await fetch("https://g-score-go-production.up.railway.app/top-students");
       const json = await res.json();
       setStudents(json);
     };
